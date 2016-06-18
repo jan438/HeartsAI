@@ -110,7 +110,8 @@ class MCTSPlayer extends Player {
 	Node expandTree(Node roNode, int childNo) {
 		State childState = new State(roNode.thisState);
 		ArrayList<Card> childHand = new ArrayList<Card>(roNode.currentHand);
-		int debug = childState.advance(childHand.remove(childNo), childHand);
+		Card removedcard = childHand.remove(childNo);
+		int debug = childState.advance(removedcard, childHand);
 		if (debug == -1) {
 			System.out.println("Error, we've made a mistake.");
 		}
