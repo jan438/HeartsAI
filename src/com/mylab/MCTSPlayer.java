@@ -158,10 +158,12 @@ class MCTSPlayer extends Player {
 				}
 			} else {
 				if (range.getRange() == 0) {
-					finalState.advance(finalHand.remove(rng.nextInt(finalHand.size())), finalHand);
+					Card removedcard = finalHand.remove(rng.nextInt(finalHand.size()));
+					finalState.advance(removedcard, finalHand);
 				} else {
 					int index = rng.nextInt(range.getRange());
-					finalState.advance(finalHand.remove(range.startIndex + index), finalHand);
+					Card removedcard = finalHand.remove(range.startIndex + index);
+					finalState.advance(removedcard, finalHand);
 				}
 			}
 		}
