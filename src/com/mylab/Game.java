@@ -208,7 +208,8 @@ class Game {
 											// round, check if only hearts
 				boolean validPlay = false;
 				Card playedCard = null;
-				State gameCopy = new State(cardsPlayed, currentRound, playerScores, hasHeartsBroken, index);
+				String name = playerOrder.get(index).getName();
+				State gameCopy = new State(cardsPlayed, currentRound, playerScores, hasHeartsBroken, index, name);
 				while (!validPlay) {
 					playedCard = playerOrder.get(index).performAction(gameCopy);
 					validPlay = checkRound(playedCard, index);

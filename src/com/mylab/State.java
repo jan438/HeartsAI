@@ -10,13 +10,15 @@ class State {
 	boolean hasHeartsBroken;
 	Random rng = new Random();
 	int playerIndex;
+	String playerName;
 
-	State(Deck deck, ArrayList<Card> round, ArrayList<Integer> scores, boolean hearts, int index) {
+	State(Deck deck, ArrayList<Card> round, ArrayList<Integer> scores, boolean hearts, int index, String name) {
 		cardsPlayed = new Deck(deck);
 		currentRound = new ArrayList<Card>(round);
 		playerScores = new ArrayList<Integer>(scores);
 		hasHeartsBroken = hearts;
 		playerIndex = index;
+		playerName = name;
 	}
 
 	State(State secondCopy) {
@@ -25,6 +27,7 @@ class State {
 		playerScores = new ArrayList<Integer>(secondCopy.playerScores);
 		hasHeartsBroken = secondCopy.hasHeartsBroken;
 		playerIndex = secondCopy.playerIndex;
+		playerName = secondCopy.playerName;
 	}
 
 	int getRoundNumber() {
