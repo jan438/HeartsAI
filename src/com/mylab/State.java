@@ -51,7 +51,9 @@ class State {
 	}
 
 	int getScore() {
-		return playerScores.get(playerIndex);
+		int index = playerIndex;
+		String name = playerName;
+		return playerScores.get(index);
 	}
 
 	boolean isInMyHand(Card c, ArrayList<Card> playoutHand) {
