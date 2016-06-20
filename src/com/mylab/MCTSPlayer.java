@@ -58,9 +58,9 @@ class MCTSPlayer extends Player {
 		for (int i = 0; i < noIterations; i++) {
 			Node expanded = treePolicy(root);
 			System.out.println("Iteration: " + i + " size:" + expanded.thisState.currentRound.size() + " "
-					+ super.cardstosymbols(expanded.currentHand));
+					+ " playerscores:" + expanded.thisState.playerScores + super.cardstosymbols(expanded.currentHand));
 			Hearts.writer.println("Iteration: " + i + " size:" + expanded.thisState.currentRound.size() + " "
-					+ super.cardstosymbols(expanded.currentHand));
+					+ " playerscores:" + expanded.thisState.playerScores + super.cardstosymbols(expanded.currentHand));
 			int valueChange = assignReward(expanded);
 			backProp(expanded, valueChange);
 		}
