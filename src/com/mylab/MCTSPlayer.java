@@ -57,12 +57,24 @@ class MCTSPlayer extends Player {
 		root = new Node(origState, playoutHand, null);
 		for (int i = 0; i < noIterations; i++) {
 			Node expanded = treePolicy(root);
-			System.out.println("Iteration: " + i + " size:" + expanded.thisState.currentRound.size() + " "
-					+ " playerscores:" + expanded.thisState.playerScores + super.cardstosymbols(expanded.currentHand));
-			Hearts.writer.println("Iteration: " + i + " size:" + expanded.thisState.currentRound.size() + " "
-					+ " playerscores:" + expanded.thisState.playerScores + super.cardstosymbols(expanded.currentHand));
+			if (i == noIterations - 1) {
+				System.out.println(
+						"Iteration: " + i + " size:" + expanded.thisState.currentRound.size() + " " + " playerscores:"
+								+ expanded.thisState.playerScores + super.cardstosymbols(expanded.currentHand));
+				Hearts.writer.println(
+						"Iteration: " + i + " size:" + expanded.thisState.currentRound.size() + " " + " playerscores:"
+								+ expanded.thisState.playerScores + super.cardstosymbols(expanded.currentHand));
+			}
 			int valueChange = assignReward(expanded);
 			backProp(expanded, valueChange);
+			if (i == noIterations - 1) {
+				System.out.println(
+						"Iteration: " + i + " size:" + expanded.thisState.currentRound.size() + " " + " playerscores:"
+								+ expanded.thisState.playerScores + super.cardstosymbols(expanded.currentHand));
+				Hearts.writer.println(
+						"Iteration: " + i + " size:" + expanded.thisState.currentRound.size() + " " + " playerscores:"
+								+ expanded.thisState.playerScores + super.cardstosymbols(expanded.currentHand));
+			}
 		}
 		return bestRewardChild(root);
 	}
