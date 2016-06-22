@@ -60,10 +60,10 @@ class MCTSPlayer extends Player {
 			if ((i == noIterations - 1) && (expanded.currentHand.size() == 0)) {
 				System.out.println(
 						"Iteration: " + i + " size:" + expanded.thisState.currentRound.size() + " " + " playerscores:"
-								+ expanded.thisState.playerScores + super.cardstosymbols(expanded.currentHand));
+								+ expanded.thisState.playerScores + " " + super.cardstosymbols(expanded.currentHand));
 				Hearts.writer.println(
 						"Iteration: " + i + " size:" + expanded.thisState.currentRound.size() + " " + " playerscores:"
-								+ expanded.thisState.playerScores + super.cardstosymbols(expanded.currentHand));
+								+ expanded.thisState.playerScores + " " + super.cardstosymbols(expanded.currentHand));
 			}
 			int valueChange = assignReward(expanded);
 			backProp(expanded, valueChange);
