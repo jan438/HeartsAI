@@ -40,10 +40,12 @@ class LookAheadPlayer extends Player {
 						&& gameHand.get(index).getSuit() == Suit.HEARTS && !hasAllHearts(gameHand)) {
 					index = rng.nextInt(gameHand.size());
 				}
-				totalpoints += gameCopy.advance(gameHand.remove(index), gameHand);
+				Card removedcard = gameHand.remove(index);
+				totalpoints += gameCopy.advance(removedcard, gameHand);
 			} else {
 				int index = rng.nextInt(range.getRange());
-				totalpoints += gameCopy.advance(gameHand.remove(range.startIndex + index), gameHand);
+				Card removedcard = gameHand.remove(range.startIndex + index);
+				totalpoints += gameCopy.advance(removedcard, gameHand);
 			}
 		}
 		return totalpoints;
@@ -69,7 +71,8 @@ class LookAheadPlayer extends Player {
 						&& gameHand.get(i).getSuit() == Suit.HEARTS)
 					break;
 				State gameCopy = new State(masterCopy);
-				int score = gameCopy.advance(gameHand.remove(i), gameHand);
+				Card removedcard = gameHand.remove(i);
+				int score = gameCopy.advance(removedcard, gameHand);
 				score += playoutGame(gameCopy, gameHand);
 				if (score < lowestScore) {
 					lowestScore = score;
@@ -83,7 +86,8 @@ class LookAheadPlayer extends Player {
 			if (masterCopy.firstInRound() && !masterCopy.hasHeartsBroken && gameHand.get(i).getSuit() == Suit.HEARTS)
 				break;
 			State gameCopy = new State(masterCopy);
-			int score = gameCopy.advance(gameHand.remove(i), gameHand);
+			Card removedcard = gameHand.remove(i);
+			int score = gameCopy.advance(removedcard, gameHand);
 			score += playoutGame(gameCopy, gameHand);
 			if (score < lowestScore) {
 				lowestScore = score;
