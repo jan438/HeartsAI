@@ -41,11 +41,13 @@ class LookAheadPlayer extends Player {
 					index = rng.nextInt(gameHand.size());
 				}
 				Card removedcard = gameHand.remove(index);
-				totalpoints += gameCopy.advance(removedcard, gameHand);
+				int score = gameCopy.advance(removedcard, gameHand);
+				totalpoints += score;
 			} else {
 				int index = rng.nextInt(range.getRange());
 				Card removedcard = gameHand.remove(range.startIndex + index);
-				totalpoints += gameCopy.advance(removedcard, gameHand);
+				int score = gameCopy.advance(removedcard, gameHand);
+				totalpoints += score;
 			}
 		}
 		return totalpoints;
