@@ -35,7 +35,8 @@ class State {
 	}
 
 	boolean isGameValid() {
-		return cardsPlayed.size() < 52;
+		int countcardsplayed = cardsPlayed.size();
+		return countcardsplayed < 52;
 	}
 
 	boolean validRound() {
