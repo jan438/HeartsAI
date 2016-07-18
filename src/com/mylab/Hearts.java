@@ -11,7 +11,8 @@ public class Hearts {
 		writer = new PrintWriter("/home/jan/heartAI.txt", "UTF-8");
 		System.out.println("Welcome to Hearts version 1.1.0.");
 		Deck thing = new Deck();
-		Player p1 = new LowPlayAI("WellsLowPlay");
+//		Player p1 = new LowPlayAI("WellsLowPlay");
+		Player p1 = new HumanPlayer("Jan1");
 		Player p2 = new RandomPlayAI("JaiRandomPlay");
 		Player p3 = new LookAheadPlayer("AntLookAhead");
 		Player p4 = new MCTSPlayer("JulianMCTS");
