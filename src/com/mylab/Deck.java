@@ -32,8 +32,12 @@ public class Deck {
 	}
 
 	void shuffleDeck() {
-		long seed = System.nanoTime();
-		Collections.shuffle(allCards, new Random(seed));
+		if (!Hearts.stubmode) {
+			long seed = System.nanoTime();
+			Collections.shuffle(allCards, new Random(seed));
+		} else {
+			Collections.shuffle(allCards, new Random(123456789L));
+		}
 	}
 
 	void printDeck() {
