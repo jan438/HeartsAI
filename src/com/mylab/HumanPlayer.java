@@ -16,6 +16,7 @@ class HumanPlayer extends Player {
 	}
 
 	Card performAction(State masterCopy) {
+		printHandStubMode();
 		boolean flag = true;
 		int i = 0;
 		while (flag) {

@@ -208,6 +208,7 @@ class MCTSPlayer extends Player {
 	}
 
 	Card performAction(State masterCopy) {
+		printHandStubMode();
 		if (masterCopy.firstMove())
 			return hand.remove(0);
 		playoutHand.clear();

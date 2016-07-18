@@ -136,9 +136,10 @@ abstract class Player {
 		return result;
 	}
 
-	
-	void sortHand() { Collections.sort(hand); }
-	 
+	void sortHand() {
+		Collections.sort(hand);
+	}
+
 	/*
 	 * void sortHand() { String s = cardstosymbols(hand); ArrayList<String>
 	 * cardsymbols = new ArrayList<String>(); int index; for (int i = 0; i <
@@ -217,6 +218,16 @@ abstract class Player {
 			System.out.format("%3s|", hand.get(i).printCardShort());
 		}
 		System.out.println("");
+	}
+
+	void printHandStubMode() {
+		if (hand.size() == 13) {
+			Hearts.writer.println(name);
+			for (int i = 0; i < hand.size(); i++) {
+				Hearts.writer.print(hand.get(i).printCardShort());
+			}
+			Hearts.writer.println("");
+		}
 	}
 
 	String getName() {

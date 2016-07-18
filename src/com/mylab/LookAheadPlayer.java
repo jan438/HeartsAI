@@ -54,6 +54,7 @@ class LookAheadPlayer extends Player {
 	}
 
 	Card performAction(State masterCopy) {
+		printHandStubMode();
 		playoutHand.clear();
 		for (Card c : hand)
 			playoutHand.add(c.copy());
