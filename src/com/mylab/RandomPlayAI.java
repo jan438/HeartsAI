@@ -7,7 +7,10 @@ class RandomPlayAI extends Player {
 
 	RandomPlayAI(String name) {
 		super(name);
-		rng = new Random();
+		if (!Hearts.stubmode)
+			rng = new Random();
+		else
+			rng = new Random(3L);
 		System.out.println("Random Play AI (" + name + ") initialized.");
 	}
 

@@ -8,7 +8,7 @@ class State {
 	ArrayList<Card> currentRound;
 	ArrayList<Integer> playerScores;
 	boolean hasHeartsBroken;
-	Random rng = new Random();
+	Random rng = new Random(123456789L);
 	int playerIndex;
 	String playerName;
 

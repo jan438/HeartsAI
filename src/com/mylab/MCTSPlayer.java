@@ -37,7 +37,10 @@ class MCTSPlayer extends Player {
 		super(name);
 		System.out.println("MCTSPlayer AI (" + name + ") initialized.");
 		playoutHand = new ArrayList<Card>(hand);
-		rng = new Random();
+		if (!Hearts.stubmode)
+			rng = new Random();
+		else
+			rng = new Random(4L);
 	}
 
 	boolean setDebug() {

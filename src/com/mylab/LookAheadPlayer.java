@@ -1,7 +1,6 @@
 package com.mylab;
 
 import java.util.*;
-import java.util.ArrayList;
 
 class LookAheadPlayer extends Player {
 	ArrayList<Card> playoutHand;
@@ -13,7 +12,10 @@ class LookAheadPlayer extends Player {
 		playoutHand = new ArrayList<Card>(hand);
 		for (Card c : hand)
 			playoutHand.add(c.copy());
-		rng = new Random();
+		if (!Hearts.stubmode)
+			rng = new Random();
+		else
+			rng = new Random(2L);
 	}
 
 	boolean setDebug() {
