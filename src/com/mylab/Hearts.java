@@ -6,12 +6,14 @@ import java.io.UnsupportedEncodingException;
 
 public class Hearts {
 	static PrintWriter writer;
+	static boolean stubmode;
 
 	public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
+		stubmode = "true".equals(args[0]);
 		writer = new PrintWriter("/home/jan/heartAI.txt", "UTF-8");
 		System.out.println("Welcome to Hearts version 1.1.0.");
 		Deck thing = new Deck();
-//		Player p1 = new LowPlayAI("WellsLowPlay");
+		// Player p1 = new LowPlayAI("WellsLowPlay");
 		Player p1 = new HumanPlayer("Jan1");
 		Player p2 = new RandomPlayAI("JaiRandomPlay");
 		Player p3 = new LookAheadPlayer("AntLookAhead");
