@@ -19,9 +19,9 @@ class Game {
 		debug = false;
 		playerOrder = new ArrayList<Player>();
 		playerOrder.add(p1);
-		playerOrder.add(p2);
-		playerOrder.add(p3);
 		playerOrder.add(p4);
+		playerOrder.add(p3);
+		playerOrder.add(p2);
 		for (Player p : playerOrder)
 			if (p.setDebug())
 				debug = true;
