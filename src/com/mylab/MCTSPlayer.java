@@ -59,6 +59,7 @@ class MCTSPlayer extends Player {
 	int runMCTS(State origState) {
 		root = new Node(origState, playoutHand, null);
 		for (int i = 0; i < noIterations; i++) {
+			System.out.println("Root state iteration: " + i + " playerscores: " + root.thisState.playerScores);
 			Node expanded = treePolicy(root);
 			if ((i == noIterations - 1) && (expanded.currentHand.size() == 0)) {
 				System.out.println(
