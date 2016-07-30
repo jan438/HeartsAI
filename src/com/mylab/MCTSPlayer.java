@@ -90,7 +90,7 @@ class MCTSPlayer extends Player {
 			SuitRange range = getSuitRange(firstSuit, thisNode.currentHand);
 			int firstIndex = range.startIndex;
 			int lastIndex = range.endIndex;
-			System.out.println("Range: " + firstIndex + "-" + lastIndex);
+			System.out.println("Range " + firstSuit + ": " + firstIndex + "-" + lastIndex);
 			if (firstSuit == null) {
 				if (thisNode.thisState.hasHeartsBroken || hasAllHearts(thisNode.currentHand)) {
 					firstIndex = 0;
