@@ -86,6 +86,7 @@ class MCTSPlayer extends Player {
 	Node treePolicy(Node roNode) {
 		Node thisNode = roNode;
 		while (thisNode.thisState.isGameValid() && expansionDepth > thisNode.depth) {
+			System.out.println("ThisNode thisState cardsPlayed size: " + thisNode.thisState.cardsPlayed.size());
 			Suit firstSuit = getFirstSuit(thisNode.thisState.currentRound);
 			SuitRange range = getSuitRange(firstSuit, thisNode.currentHand);
 			int firstIndex = range.startIndex;
@@ -159,6 +160,7 @@ class MCTSPlayer extends Player {
 		State finalState = new State(baseNode.thisState);
 		ArrayList<Card> finalHand = new ArrayList<Card>(baseNode.currentHand);
 		while (finalState.isGameValid()) {
+			System.out.println("FinalState cardsPlayed size: " + finalState.cardsPlayed.size());
 			Suit firstSuit = getFirstSuit(finalState.currentRound);
 			SuitRange range = getSuitRange(firstSuit, finalHand);
 			if (firstSuit == null) {

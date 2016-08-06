@@ -34,7 +34,7 @@ class LookAheadPlayer extends Player {
 	int playoutGame(State gameCopy, ArrayList<Card> gameHand) {
 		int totalpoints = 0;
 		while (gameCopy.isGameValid()) {
-			System.out.println("GameCopy cardsPlayed size: " + gameCopy.cardsPlayed.size());
+//			System.out.println("GameCopy cardsPlayed size: " + gameCopy.cardsPlayed.size());
 			Suit firstSuit = getFirstSuit(gameCopy.currentRound);
 			SuitRange range = getSuitRange(firstSuit, gameHand);
 			if (range.getRange() == 0) {
